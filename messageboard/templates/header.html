@@ -1,0 +1,33 @@
+<!-- header.html (ch08www project) -->
+    <nav class='navbar navbar-default'>
+        <div class='container-fluid'>
+            <div class='navbar-header'>
+                <div class='navbar-brand' align=center>
+                    不吐不快
+                </div>
+            </div>
+            <ul class='nav navbar-nav'>
+{#                {% if username %}#}
+{#                <li><a>个人资料</a></li>#}
+{#                <li><a>写日记</a></li>#}
+{#                <#}
+                <li class='active'><a href='/'>Home</a></li>
+                <li><a href='{% url 'mysite:list' %}'>浏览信息</a></li>
+                <li><a href='{% url 'mysite:post2' %}'>张贴信息</a></li>
+                <li><a href='{% url 'mysite:contact' %}'>联络管理员</a></li>
+                <li><a href='/admin/'>后台管理</a></li>
+                <li><a href='{% url 'dairy:login' %}'>登录</a> </li>
+                <li><a href='{% url 'dairy:register' %}'>注册</a> </li>
+            </ul>
+        </div>
+    </nav>
+
+{#<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>#}
+{#<script>#}
+{#    $(document).ready(function(){#}
+{#    $('ul li a').click(function(){#}
+{#        $(this).siblings().removeClass('active');#}
+{#        $(this).addClass('active')#}
+{#})#}
+{#})#}
+{#</script>#}
