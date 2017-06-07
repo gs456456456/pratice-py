@@ -5,7 +5,7 @@ from mysite import views
 app_name = 'mysite'
 
 urlpatterns = [
-    url(r'^$', views.index),
+    url(r'^$', views.index,name='mainindex'),
     url(r'^(\d+)/(\w+)/$', views.index,name='index'),
     url(r'^list/$', views.listing,name='list'),
     url(r'^post/$', views.posting,name='post'),
