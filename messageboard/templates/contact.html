@@ -6,12 +6,12 @@
     {% if message %}
         <div class='alert alert-warning'>{{ message }}</div>
     {% endif %}
-    <div class='panel panel-primary'>
+    <div class='panel-primary'>
         <div class='panel-heading'>
             <form name='my form' method="post" action={% url 'mysite:contact' %} >
                 {% csrf_token %}
             <h3>写信给管理员</h3>
-
+        </div>
         <div class='panel-body'>
             {{ form.as_p }}
         </div>

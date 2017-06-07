@@ -47,7 +47,6 @@ def register(request):
             data = register_form.cleaned_data
             models.User_info.objects.create(**data)
             message = '您已注册成功,请继续操作'
-
             return render(request,'register.html',locals())
         else:
             message='请稍后注册'

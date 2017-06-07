@@ -21,7 +21,6 @@ class Registerform(forms.Form):
         user_form = self.cleaned_data['user_name']
         user_model = list(models.User_info.objects.all().values_list('user_name'))
         for i in user_model:
-            print(i)
             if user_form in i:
                 raise forms.ValidationError('用户名已存在,请重新尝试登录')
         if pwd!=pwd2:

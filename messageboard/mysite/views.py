@@ -2,16 +2,17 @@
 from django.core.mail import EmailMessage
 from mysite import models, forms
 from django.shortcuts import redirect,render
+from django.core.mail import send_mail
 
 def index(request, pid=None, del_pass=None):
     
     posts = models.Post.objects.filter(enabled=True).order_by('-pub_time')[:30]
     moods = models.Mood.objects.all()
     try:
-        user_id = request.GET['user_id']
-        user_pass = request.GET['user_pass']
-        user_post = request.GET['user_post']
-        user_mood = request.GET['mood']
+        user_id = request.POST['user_id']
+        user_pass = request.POST['user_pass']
+        user_post = request.POST['user_post']
+        user_mood = request.POST['mood']
     except:
         user_id = None
         message = '如要张贴信息，则每一个字段都要填...'
@@ -80,10 +81,10 @@ def contact(request):
 反应意见：如下
 {}'''.format(user_name, user_city, user_school, user_message)
 
-            email = EmailMessage(   '来自【不吐不快】网站的网友意见', 
-                                    mail_body, 
+            email = EmailMessage(   '来自【不吐不快】网站的网友意见',
+                                    mail_body,
                                     user_email,
-                                    ['skynet.tw@gmail.com'])
+                                    ['1154442437@qq.com'])
             email.send()
         else:
             message = "请检查您输入的信息是否正确！"

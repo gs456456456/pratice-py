@@ -6,12 +6,8 @@ from django.forms import ModelForm
 
 class ContactForm(forms.Form):
     CITY = [
-        ['TP', 'Taipei'],
-        ['TY', 'Taoyuang'],
-        ['TC', 'Taichung'],
-        ['TN', 'Tainan'],
-        ['KS', 'Kaohsiung'],
-        ['NA', 'Others'],
+        ['CH', 'China'],
+        ['JP', 'Japan'],
     ]
     user_name = forms.CharField(label='您的姓名', max_length=50, initial='李大仁')
     user_city = forms.ChoiceField(label='居住城市', choices=CITY)

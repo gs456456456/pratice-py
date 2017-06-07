@@ -15,10 +15,14 @@ SECRET_KEY = 'y&ap$#@q@+a_60x_8jzg6%y(a!f46+f72r_&@-5don-7@92*@^'
 DEBUG = True
 
 ALLOWED_HOSTS = []
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
-MAILGUN_ACCESS_KEY = 'key-55---------------------7e7'
-MAILGUN_SERVER_NAME = 'drho.tw'
+EMAIL_USE_TLS = False
+EMAIL_HOST = 'smtp.qq.com'
+EMAIL_PORT = 25
+EMAIL_HOST_USER = '1154442437@qq.com'
+EMAIL_HOST_PASSWORD = 'XXXXXX'#shouquanma
+DEFAULT_FROM_EMAIL = 'mail@tuweizhong.com'
 
 
 # Application definition
